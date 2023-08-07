@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="NoticeMapper">
+<!--  	type에는 NoticeVO의 경로를 적고 resultMap태그에는 여러개가 있을 수 있으니 id값으로 구분해줌 -->
+<!--  	왜 힘들게 resultMap을 써야하는가? VO클래스의 필드명과 DB의 컬럼명이 달라서 매핑해줘야 하므로 씀 -->
+<!--  	PK에 해당하는 컬럼은 id 태그로 그 외 나머지는 result 태그로 매핑해줌 -->
+ 	<resultMap type="com.kh.notice.model.vo.Notice" id="noticeResultMap">
+ 		<id property="inquiryNo" 		 column="INQUIRY_NO" />
+ 		<result property="inquirySubject" column="INQUIRY_SUBJECT" />
+ 		<result property="inquiryContent" column="INQUIRY_CONTENT" />
+ 		<result property="inquiryWriter"  column="INQUIRY_WRITER" />
+ 		<result property="inquiryDate"	 column="INQUIRY_DATE" />
+ 		<result property="inquiryYN" 	 column="INQUIRY_YN" />
+ 		
+ 	</resultMap>
+
+	<insert id="insertInquiry">
+		INSERT INTO INQUIRY_TBL VALUES(SEQ_INQUIRYNO.NEXTVAL,#{inquirySubject}
+		,#{inquiryContent},#{inquiryWriter},#{inquiryDate},'미등록')
+	</insert>
+	
+	<delete id="deleteInquiry">
+		DELETE FROM NOTICE_TBL WHERE NOTICE_NO = ${inquiryNo}
+	</delete>
+	
+	<select id="selectInquiryList">
+		SELECT * FROM INQUIRY_TBL ORDER BY NOTICE_NO DESC
+	</select>
+	
+	<select id="selectOneByNo">
+		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = #{inquiryNo}
+	</select>
+	
+</mapper>

@@ -1,35 +1,38 @@
 package todayeat.model.service;
 
-import java.sql.*;
-import java.util.List;
+import org.apache.ibatis.session.SqlSession;
 
-import todayeat.common.JDBCTemplate;
+import todayeat.common.SqlSessionTemplate;
 import todayeat.model.dao.MemberDAO;
 import todayeat.model.vo.Member;
 
 public class MemberService {
+	private MemberDAO mDao;
+	
+	public MemberService() {
+		mDao = new MemberDAO();
+	}
+	
 	// 데이터 추가
 	public int insertMember(Member member) {
-		JDBCTemplate jdbcTemplate = JDBCTemplate.getInstance();
-		Connection conn = jdbcTemplate.createConnection();
-		MemberDAO mDao = new MemberDAO();
-		int result = mDao.insertMember(conn, member);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = mDao.insertMember(session, member);
 		if(result > 0) {
 			// 성공시 커밋
-			jdbcTemplate.commit(conn);
+			session.commit();
 		} else {
 			// 실패시 롤백
-			jdbcTemplate.rollback(conn);
+			session.rollback();
 		}
+		session.close();
 		return result;
 	}
 	// 로그인
 	public Member selectLongin(Member member) {
-		JDBCTemplate jdbcTemplate = JDBCTemplate.getInstance();
-		Connection conn = jdbcTemplate.createConnection();
-		MemberDAO mDao = new MemberDAO();
-		member = mDao.selectLongin(conn, member);
-		return member;
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.selectLongin(session, member);
+		session.close();
+		return mOne;
 	}
 	
 	

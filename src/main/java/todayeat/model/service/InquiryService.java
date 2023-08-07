@@ -3,56 +3,60 @@ package todayeat.model.service;
 import java.sql.*;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+
 import todayeat.common.JDBCTemplate;
+import todayeat.common.SqlSessionTemplate;
 import todayeat.model.dao.InquiryDAO;
 import todayeat.model.vo.Inquiry;
 
 public class InquiryService {
 	private InquiryDAO iDao;
-	private JDBCTemplate jdbcTemplate;
+//	private JDBCTemplate jdbcTemplate;
 	
 	public InquiryService() {
 		iDao = new InquiryDAO();
-		jdbcTemplate = JDBCTemplate.getInstance();
+//		jdbcTemplate = JDBCTemplate.getInstance();
 	}
 	
 	// 데이터 INSERT
 	public int insertInquiry(Inquiry inquiry) {
-		Connection conn = jdbcTemplate.createConnection();
-		int result = iDao.insertInquiry(conn, inquiry);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = iDao.insertInquiry(session, inquiry);
 		if(result > 0) {
 			// 성공시 커밋
-			jdbcTemplate.commit(conn);
+			session.commit();
 		} else {
 			// 실패시 롤백
-			jdbcTemplate.rollback(conn);
+			session.rollback();
 		}
-		jdbcTemplate.close(conn);
+		session.close();
 		return result;
 	}
 	// 전체 문의글
 	public List<Inquiry> selectInquiryList() {
-		Connection conn = jdbcTemplate.createConnection();
-		List<Inquiry> iList = iDao.selectInquiryList(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		List<Inquiry> iList = iDao.selectInquiryList(session);
+		session.close();
 		return iList;
 	}
 	// 상세 조회
 	public Inquiry selectOneByNo(int inquiryNo) {
-		Connection conn = jdbcTemplate.createConnection();
-		Inquiry inquiry = iDao.selectOneByNo(conn, inquiryNo);
-		jdbcTemplate.close(conn);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Inquiry inquiry = iDao.selectOneByNo(session, inquiryNo);
+		session.close();
 		return inquiry;
 	}
 	// 문의 삭제
 	public int deleteInquiry(int inquiryNo) {
-		Connection conn = jdbcTemplate.createConnection();
-		int result = iDao.deleteInquiry(conn, inquiryNo);
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = iDao.deleteInquiry(session, inquiryNo);
 		if(result > 0) {
-			jdbcTemplate.commit(conn);
+			session.commit();
 		} else {
-			jdbcTemplate.rollback(conn);
+			session.rollback();
 		}
-		jdbcTemplate.close(conn);
+		session.close();
 		return result;
 	}
 	

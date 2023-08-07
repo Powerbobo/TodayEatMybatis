@@ -2,7 +2,6 @@ package todayeat.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,9 +40,9 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String memberid = request.getParameter("user-id");
-		String memberpw = request.getParameter("user-pw");
-		Member member = new Member(memberid, memberpw);
+		String memberId = request.getParameter("user-id");
+		String memberPw = request.getParameter("user-pw");
+		Member member = new Member(memberId, memberPw);
 		MemberService service = new MemberService();
 		Member mOne = service.selectLongin(member);
 		if(mOne != null) {
