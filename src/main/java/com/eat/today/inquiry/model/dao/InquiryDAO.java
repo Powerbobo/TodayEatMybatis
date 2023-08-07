@@ -81,16 +81,10 @@ public class InquiryDAO {
 		if(needPrev) {
 			result.append("<a href='/inquiry/list.do?currentPage="+(startNavi-1)+"'>[이전]</a> ");
 		}
-//		if(startNavi != 1) {
-//			result.append("<a href=/inquiry/list.do?currentPage="+(startNavi-1)+"'>[이전]</a>");
-//		}
 		
 		for(int i = startNavi; i <= endNavi; i++) {
 			result.append("<a href='/inquiry/list.do?currentPage="+i+"'>"+i+"</a>&nbsp;&nbsp;");
 		}
-//		if(endNavi != totalNaviCount) {
-//			result.append("<a href=/inquiry/list.do?currentPage="+(endNavi+1)+"'>[다음]</a>");
-//		}
 		if(needNext) {
 			result.append("<a href='/inquiry/list.do?currentPage="+(endNavi+1)+"'>[다음]</a>");
 		}

@@ -6,17 +6,17 @@
 <mapper namespace="MemberMapper">	<!-- 이름 붙여주기 -->
 	
 	<!-- Member의 필드명과 컬럼명이 다르기때문에 연결시켜주기  -->
-	<resultMap type="todayeat.model.vo.Member" id="memberResultMap">
+	<resultMap type="com.eat.today.member.model.vo.Member" id="memberResultMap">
 <!-- 	PRIMARY KEY 이기때문에 id로 구분 -->
-		<id property="memberId" 		 column="MEMBER_ID" /> 
-		<result property="memberPw"		 column="MEMBER_PW"/>
-		<result property="memberPwRe"		 column="MEMBER_PWRE"/>
-		<result property="memberName" 	 column="MEMBER_NAME"/>
-		<result property="memberPhone" 	 column="MEMBER_PHONE"/>
-		<result property="memberEmail" 	 column="MEMBER_EMAIL"/>
-		<result property="memberAddress" column="MEMBER_ADDRESS"/>
-		<result property="memberGender"  column="MEMBER_GENDER"/>
-		<result property="memberBirthday" 	 column="MEMBER_BIRTHDAY"/>
+		<id property="memberId" 		  column="MEMBER_ID" /> 
+		<result property="memberPw"		  column="MEMBER_PW"/>
+		<result property="memberPwRe"	  column="MEMBER_PWRE"/>
+		<result property="memberName" 	  column="MEMBER_NAME"/>
+		<result property="memberPhone" 	  column="MEMBER_PHONE"/>
+		<result property="memberEmail" 	  column="MEMBER_EMAIL"/>
+		<result property="memberAddress"  column="MEMBER_ADDRESS"/>
+		<result property="memberGender"   column="MEMBER_GENDER"/>
+		<result property="memberBirthday" column="MEMBER_BIRTHDAY"/>
 	</resultMap>
 
 	<insert id="insertMember">

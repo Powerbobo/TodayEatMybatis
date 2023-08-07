@@ -2,58 +2,15 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>login</title>
-        <link rel="stylesheet" href="/resources/css/index.css">
-        <link rel="stylesheet" href="/resources/css/reset.css">
-        <link rel="stylesheet" href="/resources/css/find_id_email.css">
-        <link rel="stylesheet" href="/resources/css/find_id_phone.css">
-    </head>
+	<!-- head -->
+	<jsp:include page="/WEB-INF/views/include/head_index.jsp"></jsp:include>
     <body>
         <div id="container">
-            <header>
-                <div id="header">
-                    <!-- 쿠폰 -->
-                    <div id="coupon">
-                        <p id="header-coupon"><a href="#">지금 첫 주문하고, 5천원 할인 쿠폰 받기</a></p>
-                    </div>
-                    <!-- 로고 -->
-                    <div id="logo">
-                        <p class="header-logo"><a href="/index.jsp">오늘<span id="logo-layer"> 뭐 </span>먹지?</a></p>
-                    </div>
-                    <!-- 네비게이션 -->
-                    <nav>
-                        <ul>
-                            <!-- 메뉴표 -->
-                            <li><a class="manu" href="/WEB-INF/views/service/menu.jsp">메뉴표</a> </li>
-                            <!-- 서비스 지역 -->
-                            <li><a class="manu" href="/WEB-INF/views/service/service_area.jsp">서비스 지역</a> </li>
-                            <!-- 이벤트 -->
-                            <li><a class="manu" href="/WEB-INF/views/service/event.jsp">이벤트</a> </li>
-                            <!-- 문의하기 -->
-                            <li><a class="manu" href="/WEB-INF/views/member/inquiry.jsp">문의하기</a> </li>
-                            <!-- 마이페이지 -->
-                            <li><a class="manu" href="#">마이페이지</a> </li>
-                        </ul>
-                    </nav>
-                    <!-- 로그인/회원가입 -->
-                    <div id="login">
-                        <a href="/WEB-INF/views/member/login.jsp">로그인</a><pre id="Space"> | </pre><a href="/WEB-INF/views/member/join.jsp">회원가입</a></div>
-                </div>
-                <!-- 채팅 문의 -->
-                <div class="aside">
-                    <div id="chat">
-                        <a href="#"><img class="img" src="/resources/images/chat.png" alt="문의"></a>
-                    </div>
-                </div>
-            </header>
-
+        	<!-- header -->
+			<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
             <main>
                 <!-- 아이디 찾기 -->
-                <form action="/member/findId.do" method="post">
+                <form action="/member/findIdEmail.do" method="post">
 	                <div class="findId">
 	                    <h2>아이디 찾기</h2>
 	                    <div id="choiceWay">
