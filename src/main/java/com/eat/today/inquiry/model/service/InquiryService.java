@@ -1,14 +1,13 @@
-package todayeat.model.service;
+package com.eat.today.inquiry.model.service;
 
-import java.sql.*;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import todayeat.common.JDBCTemplate;
-import todayeat.common.SqlSessionTemplate;
-import todayeat.model.dao.InquiryDAO;
-import todayeat.model.vo.Inquiry;
+import com.eat.today.common.SqlSessionTemplate;
+import com.eat.today.inquiry.model.dao.InquiryDAO;
+import com.eat.today.inquiry.model.vo.Inquiry;
+import com.eat.today.inquiry.model.vo.PageData;
 
 public class InquiryService {
 	private InquiryDAO iDao;
@@ -34,11 +33,13 @@ public class InquiryService {
 		return result;
 	}
 	// 전체 문의글
-	public List<Inquiry> selectInquiryList() {
+	public PageData selectInquiryList(int currentPage) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
-		List<Inquiry> iList = iDao.selectInquiryList(session);
+		List<Inquiry> iList = iDao.selectInquiryList(session, currentPage);
+		String pageNavi = iDao.generatePageNavi(session, currentPage);
+		PageData pd = new PageData(iList, pageNavi);
 		session.close();
-		return iList;
+		return pd;
 	}
 	// 상세 조회
 	public Inquiry selectOneByNo(int inquiryNo) {
@@ -56,6 +57,21 @@ public class InquiryService {
 		} else {
 			session.rollback();
 		}
+		session.close();
+		return result;
+	}
+	// 문의 수정
+	public int updateInquiry(Inquiry inquiry) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = iDao.updateInquiry(session, inquiry);
+		if(result > 0) {
+			// 업데이트 성공하면 커밋
+			session.commit();
+		} else {
+			// 업데이터 실패하면 롤백
+			session.rollback();
+		}
+		// conn 자원 해제
 		session.close();
 		return result;
 	}

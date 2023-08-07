@@ -1,4 +1,4 @@
-package todayeat.common;
+package com.eat.today.common;
 
 import java.io.IOException;
 import java.io.InputStream;

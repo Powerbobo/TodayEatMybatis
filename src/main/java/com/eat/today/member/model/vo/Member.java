@@ -1,4 +1,4 @@
-package todayeat.model.vo;
+package com.eat.today.member.model.vo;
 
 import java.sql.Date;
 

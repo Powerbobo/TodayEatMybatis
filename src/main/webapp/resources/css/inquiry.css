@@ -1,5 +1,5 @@
 main {
-    height: 800px;
+    height: 1000px;
 }
 #inquiry {
     --object-position: 1px solid #ccc;
@@ -14,8 +14,8 @@ main {
     text-align: center;
     margin: 50px 50px;
     position: relative;
-    top: 110px;
-    right:50px;
+    top: 55px;
+    left: 430px;
 }
 #list > span {
     font-family: 'LINESeedKR-Bd';

@@ -1,11 +1,9 @@
-package todayeat.controller;
+package com.eat.today.member.controller;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Formatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import todayeat.model.service.MemberService;
-import todayeat.model.vo.Member;
+import com.eat.today.member.model.service.MemberService;
+import com.eat.today.member.model.vo.Member;
 
 /**
  * Servlet implementation class JoinController

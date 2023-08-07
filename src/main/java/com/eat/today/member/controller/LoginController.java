@@ -1,4 +1,4 @@
-package todayeat.controller;
+package com.eat.today.member.controller;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import todayeat.model.service.MemberService;
-import todayeat.model.vo.Member;
+import com.eat.today.member.model.service.MemberService;
+import com.eat.today.member.model.vo.Member;
 
 /**
  * Servlet implementation class LoginController

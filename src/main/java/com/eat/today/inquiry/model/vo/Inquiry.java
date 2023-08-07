@@ -1,4 +1,4 @@
-package todayeat.model.vo;
+package com.eat.today.inquiry.model.vo;
 
 import java.sql.Date;
 
@@ -27,6 +27,13 @@ public class Inquiry {
 		this.inquirySubject = inquirySubject;
 		this.inquiryContent = inquiryContent;
 		this.inquiryWriter = inquiryWriter;
+	}
+	
+	public Inquiry(int inquiryNo, String inquirySubject, String inquiryContent) {
+		super();
+		this.inquiryNo = inquiryNo;
+		this.inquirySubject = inquirySubject;
+		this.inquiryContent = inquiryContent;
 	}
 
 	public int getInquiryNo() {

@@ -1,4 +1,4 @@
-package todayeat.controller;
+package com.eat.today.member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

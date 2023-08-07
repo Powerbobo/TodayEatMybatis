@@ -1,13 +1,14 @@
-package todayeat.controller;
+package com.eat.today.inquiry.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import todayeat.model.service.InquiryService;
+import com.eat.today.inquiry.model.service.InquiryService;
 
 /**
  * Servlet implementation class InquiryDeleteController

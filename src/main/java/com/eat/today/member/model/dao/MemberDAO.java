@@ -1,8 +1,8 @@
-package todayeat.model.dao;
+package com.eat.today.member.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import todayeat.model.vo.Member;
+import com.eat.today.member.model.vo.Member;
 
 public class MemberDAO {
 

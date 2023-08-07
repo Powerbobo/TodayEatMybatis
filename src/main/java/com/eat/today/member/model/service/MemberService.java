@@ -1,10 +1,10 @@
-package todayeat.model.service;
+package com.eat.today.member.model.service;
 
 import org.apache.ibatis.session.SqlSession;
 
-import todayeat.common.SqlSessionTemplate;
-import todayeat.model.dao.MemberDAO;
-import todayeat.model.vo.Member;
+import com.eat.today.common.SqlSessionTemplate;
+import com.eat.today.member.model.dao.MemberDAO;
+import com.eat.today.member.model.vo.Member;
 
 public class MemberService {
 	private MemberDAO mDao;

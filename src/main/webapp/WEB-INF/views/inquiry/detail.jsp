@@ -39,9 +39,9 @@
 					</li>
 				</ul>
 				<a href="/inquiry/list.do">목록으로 이동</a>
-				<a href="#">수정하기</a>
+				<a href="/inquiry/modify.do?inquiryNo=${inquiry.inquiryNo }">수정하기</a>
 <%-- 				<a href="/inquiry/delete.do?inquiryNo=${requestScope.inquiry.inquiryNo }">삭제하기</a> --%>
-				<a href="" onclick="deleteCheck();">삭제하기</a>
+				<a href="/inquiry/delete.do?inquiryNo=${inquiry.inquiryNo }" onclick="deleteCheck();">삭제하기</a>
 			</main>
 			<!-- footer -->
 <%-- 			<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include> --%>

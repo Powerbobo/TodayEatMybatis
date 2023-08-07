@@ -6,8 +6,9 @@
 <mapper namespace="MemberMapper">	<!-- 이름 붙여주기 -->
 	
 	<!-- Member의 필드명과 컬럼명이 다르기때문에 연결시켜주기  -->
-	<resultMap type="com.kh.member.model.vo.Member" id="memberResultMap">
-		<id property="memberId" 		 column="MEMBER_ID" /> <!-- PRIMARY KEY 이기때문에 id로 구분 -->
+	<resultMap type="todayeat.model.vo.Member" id="memberResultMap">
+<!-- 	PRIMARY KEY 이기때문에 id로 구분 -->
+		<id property="memberId" 		 column="MEMBER_ID" /> 
 		<result property="memberPw"		 column="MEMBER_PW"/>
 		<result property="memberPwRe"		 column="MEMBER_PWRE"/>
 		<result property="memberName" 	 column="MEMBER_NAME"/>
