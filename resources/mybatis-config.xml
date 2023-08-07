@@ -12,8 +12,8 @@
 			<dataSource type="POOLED">
 				<property name="driver"   value="oracle.jdbc.driver.OracleDriver"/>
 				<property name="url"	  value="jdbc:oracle:thin:@127.0.0.1:1521:xe"/>
-				<property name="username" value="MEMBERWEB"/>
-				<property name="password" value="MEMBERWEB"/>
+				<property name="username" value="TODAYEAT"/>
+				<property name="password" value="TODAYEAT"/>
 			</dataSource>
 		</environment>
 	</environments>
