@@ -36,7 +36,7 @@
 				</li>
 				<!-- 마이페이지 -->
 				<li>
-					<a class="manu" href="#">마이페이지</a>
+					<a class="manu" href="/member/update.do">마이페이지</a>
 				</li>
 			</ul>
 		</nav>
@@ -49,7 +49,7 @@
 			</c:if>
 		<c:if test="${ userId ne null }">
 <!-- 			<small>{sessionScope.userName }님 환영합니다!</small> -->
-			<a href="#">마이페이지</a>
+			<a href="/member/update.do">마이페이지</a>
 			<pre id="Space"> | </pre>
 			<a href="/member/logout.do?memberId=${memberScope.userId }">로그아웃</a>
 		</c:if>

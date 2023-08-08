@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<!-- head -->
-	<jsp:include page="/WEB-INF/views/include/head_index.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/include/head_find.jsp"></jsp:include>
     <body>
         <div id="container">
         	<!-- header -->
@@ -16,27 +16,27 @@
 	                    <div id="choiceWay">
 	                        <!-- 휴대폰 인증 -->
 	                        <div id="phoneCer">
-	                            <a href="/WEB-INF/views/member/find_id_phone.jsp"><h3>휴대폰 인증</h3></a>
+	                            <a href="/member/findIdPhone.do"><h3>휴대폰 인증</h3></a>
 	                        </div>
 	                        <!-- 이메일 인증 -->
 	                        <div id="emailCer">
-	                            <a href="/WEB-INF/views/member/find_id_email.jsp"><h3>이메일 인증</h3></a>
+	                            <a href="/member/findIdEmail.do"><h3>이메일 인증</h3></a>
 	                        </div>
 	                        <hr>
 	                    </div>
 	                    <!-- 이름 -->
 	                    <div id="userName">
 	                        <h3>이름</h3>
-	                        <input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요">
+	                        <input type="text" name="memberName" id="memberName" placeholder="이름을 입력해주세요">
 	                    </div>
 	                    <!-- 이메일 -->
 	                    <div id="usernumber">
 	                        <h3>이메일</h3>
-	                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일을 입력해주세요">
+	                        <input type="text" name="memberEmail" id="memberEmail" placeholder="이메일을 입력해주세요">
 	                    </div>
-	                    <!-- 인증번호 받기 -->
+	                    <!-- 인증번호 받기 (alert 창으로 아이디 띄우는 방식으로 변경)-->
 	                    <div class="number">
-	                        <input id="number" type="submit" value="인증번호 보내기">
+	                        <input id="number" type="submit" value="아이디 찾기">
 	                    </div>
 	                </div>
                 </form>

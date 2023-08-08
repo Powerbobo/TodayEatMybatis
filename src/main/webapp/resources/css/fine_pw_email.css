@@ -58,7 +58,7 @@ hr {
     margin-bottom: 16px;
     font-family: 'LINESeedKR-Bd';
 }
-.number > input[value="인증번호 받기"] {
+.number > input[value="비밀번호 찾기"] {
     font-size: 20px;
     color: #fff;
     background-color: #266d07;

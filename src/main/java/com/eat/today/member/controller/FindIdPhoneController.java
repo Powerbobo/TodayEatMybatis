@@ -11,16 +11,16 @@ import com.eat.today.member.model.service.MemberService;
 import com.eat.today.member.model.vo.Member;
 
 /**
- * Servlet implementation class FindIdEmailController
+ * Servlet implementation class FindIdPhone
  */
-@WebServlet("/member/findIdEmail.do")
-public class FindIdEmailController extends HttpServlet {
+@WebServlet("/member/findIdPhone.do")
+public class FindIdPhoneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FindIdEmailController() {
+    public FindIdPhoneController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +29,7 @@ public class FindIdEmailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/member/find_id_email.jsp")
+		request.getRequestDispatcher("/WEB-INF/views/member/find_id_phone.jsp")
 		.forward(request, response);
 	}
 
@@ -39,23 +39,22 @@ public class FindIdEmailController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String memberName = request.getParameter("memberName");
-		String memberEmail = request.getParameter("memberEmail");
+		String memberPhone = request.getParameter("memberPhone");
 		Member member = new Member();
 		member.setMemberName(memberName);
-		member.setMemberEmail(memberEmail);
+		member.setMemberPhone(memberPhone);
 		MemberService service = new MemberService();
-		Member mOne = service.selectOneByEmail(member);
+		Member mOne = service.selectOneByPhone(member);
 		if(mOne != null) {
-			// 성공 -> alert창에 아이디 띄우고 로그인 페이지로 이동
-			// SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = ? AND MEMBER_EMAIL = ?
-			request.setAttribute("msg", "찾으신 아이디는 "+ mOne.getMemberId()+"입니다.");
-			request.setAttribute("url","/member/login.do");
+			// 성공 -> alert 창 띄우고 로그인 페이지로 이동
+			request.setAttribute("msg", "찾으신 아이디는 "+mOne.getMemberId()+"입니다.");
+			request.setAttribute("url", "/member/login.do");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
 			.forward(request, response);
 		} else {
-			// 실패 -> 그대로 아이디찾기(이메일) 페이지
+			// 실패 -> alert 창 띄우고 아이디 찾기 페이지(전화번호)로 다시 이동
 			request.setAttribute("msg", "아이디 조회에 실패하였습니다.");
-			request.setAttribute("url","/member/findIdEmail.do");
+			request.setAttribute("url","/member/findIdPhone.do");
 			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
 			.forward(request, response);
 		}

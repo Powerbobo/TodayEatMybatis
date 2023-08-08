@@ -27,4 +27,20 @@
 	<select id="selectLongin" resultMap="memberResultMap">
 		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId } AND MEMBER_PW = #{memberPw }
 	</select>
+	
+	<select id="selectOneByEmail" resultMap="memberResultMap">
+		SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_EMAIL = #{memberEmail }
+	</select>
+	
+	<select id="selectOneByPhone" resultMap="memberResultMap">
+		SELECT MEMBER_ID FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_PHONE = #{memberPhone }
+	</select>
+	
+	<select id="selectPwOneByPhone" resultMap="memberResultMap">
+		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_PHONE = #{memberPhone }
+	</select>
+	
+		<select id="selectPwOneByEmail" resultMap="memberResultMap">
+		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_Email = #{memberEmail }
+	</select>
 </mapper>

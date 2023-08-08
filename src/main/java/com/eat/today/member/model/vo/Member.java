@@ -32,22 +32,12 @@ public class Member {
 		this.memberBirthday = memberBirthday;
 	}
 
-	
-	
-	
-	
-//	public Member(String memberName, String memberEmail) {
-//		super();
-//		this.memberName = memberName;
-//		this.memberEmail = memberEmail;
-//	}
-
 	public Member(String memberId, String memberPw) {
 		super();
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 	}
-
+	
 	// getter, setter 메소드
 	public String getMemberId() {
 		return memberId;

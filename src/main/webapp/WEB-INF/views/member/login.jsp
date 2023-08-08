@@ -22,7 +22,7 @@
 						</label>
 						<!-- 아이디찾기 / 비밀번호 찾기 -->
 						<p id="find">
-							<a href="/WEB-INF/views/member/find_id_phone.jsp">아이디찾기</a>|<a href="/WEB-INF/views/member/find_pw_phone.jsp">비밀번호 찾기</a>
+							<a href="/member/findIdPhone.do">아이디찾기</a>|<a href="/member/findPwPhone.do">비밀번호 찾기</a>
 						</p>
 						<!-- 로그인 버튼 -->
 						<input type="submit" value="로그인">

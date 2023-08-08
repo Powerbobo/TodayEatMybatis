@@ -34,6 +34,31 @@ public class MemberService {
 		session.close();
 		return mOne;
 	}
+	// 이메일로 아이디 찾기
+	public Member selectOneByEmail(Member member) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.selectOneByEmail(session, member);
+		return mOne;
+	}
+	// 전화번호로 아이디 찾기
+	public Member selectOneByPhone(Member member) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.selectOneByPhone(session, member);
+		return mOne;
+	}
+	// 전화번호로 비밀번호 찾기
+	public Member selectPwOneByPhone(Member member) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.selectPwOneByPhone(session, member);
+		return mOne;
+	}
+	// 이메일로 비밀번호 찾기
+	public Member selectPwOneByEmail(Member member) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member mOne = mDao.selectPwOneByEmail(session, member);
+		return mOne;
+	}
+	
 	
 	
 }

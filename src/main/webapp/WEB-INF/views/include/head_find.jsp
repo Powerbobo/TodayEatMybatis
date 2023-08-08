@@ -7,10 +7,6 @@
 		<title>오늘 뭐 먹지?</title>
 		<link rel="stylesheet" href="/resources/css/index.css">
 		<link rel="stylesheet" href="/resources/css/reset.css">
-		<link rel="stylesheet" href="/resources/css/login.css">
-		<link rel="stylesheet" href="/resources/css/join.css">
-		 <link rel="stylesheet" href="/resources/css/inquiry.css">
-		 <link rel="stylesheet" href="/resources/css/detail.css">
 		 <link rel="stylesheet" href="/resources/css/find_id_email.css">
 		 <link rel="stylesheet" href="/resources/css/find_id_phone.css">
 		 <link rel="stylesheet" href="/resources/css/find_pw_phone.css">

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<!-- head -->
-	<jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/include/head_join.jsp"></jsp:include>
     <body>
         <div id="container">
          <!-- header -->
@@ -26,7 +26,7 @@
 	                    </div>
 	                    <!-- 비밀번호 재입력 -->
 	                    <div class="join-info" id="join-pwRe">
-	                        <span>비밀번호확인 </span>
+	                        <span>비밀번호 확인 </span>
 	                        <input class="joinInfo" type="password" name="joinPwRe" id="joinPwRe" placeholder="비밀번호를 한번 더 입력하세요.">
 	                    </div>
 	                    <!-- 이름 입력 -->

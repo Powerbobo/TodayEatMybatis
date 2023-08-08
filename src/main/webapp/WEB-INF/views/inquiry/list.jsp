@@ -5,6 +5,7 @@
 <html lang="ko">
 	<!-- head -->
 	<jsp:include page="/WEB-INF/views/include/head_inquiry.jsp"></jsp:include>
+	<link rel="stylesheet" href="/resources/css/inquiry.css">
     <body>
         <div id="container">
 	        <!-- header -->

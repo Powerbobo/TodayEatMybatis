@@ -15,5 +15,25 @@ public class MemberDAO {
 		Member mOne = session.selectOne("MemberMapper.selectLongin", member);
 		return mOne;
 	}
+	// 이메일로 아이디 찾기
+	public Member selectOneByEmail(SqlSession session, Member member) {
+		Member mOne = session.selectOne("MemberMapper.selectOneByEmail", member);
+		return mOne;
+	}
+	// 전화번호로 아이디 찾기
+	public Member selectOneByPhone(SqlSession session, Member member) {
+		Member mOne = session.selectOne("MemberMapper.selectOneByPhone", member);
+		return mOne;
+	}
+	// 전화번호로 비밀번호 찾기
+	public Member selectPwOneByPhone(SqlSession session, Member member) {
+		Member mOne = session.selectOne("MemberMapper.selectPwOneByPhone", member);
+		return mOne;
+	}
+	// 이메일로 비밀번호 찾기
+	public Member selectPwOneByEmail(SqlSession session, Member member) {
+		Member mOne = session.selectOne("MemberMapper.selectPwOneByEmail", member);
+		return mOne;
+	}
 
 }
