@@ -9,7 +9,7 @@
 		 <!-- header -->
 <%-- 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include> --%>
 		<main>
-		<h1>회원 상세 조회</h1>
+			<h1>회원 상세 조회</h1>
 			<form action="/member/update.do" method="post">
 				<fieldset>
 					<legend>회원 상세정보</legend>
@@ -50,17 +50,14 @@
 						</li>
 						<li>
 							<label for="memberBirthday">출생년도</label>
-							<input type="text" id="memberBirthday" name="memberBirthday" value="${member.memberBirthday}">
-						</li>
-						<li>
-							<label for="member-date">가입날짜</label>
-							<input type="text" id="member-date" name="member-date" value="${member.memberDate}" readonly>
+							<input type="text" id="memberBirthday" name="memberBirthday" value="${member.memberBirthday}" readonly>
 						</li>
 					</ul> 
 					<br>
 				</fieldset>
 				<div>
 					<br>
+					<a href="/index.jsp">메인 페이지</a>
 					<button type="submit">수정하기</button>
 					<a href="javascrip:void(0)" onclick="checkDelete();">탈퇴하기</a>
 		<%-- 		<a onclick="checkDelete()" href="/member/delete.do?memberId=${ sessionScope.memberId }">탈퇴하기</a> --%>

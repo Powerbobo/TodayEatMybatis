@@ -10,7 +10,7 @@
 <!-- 	PRIMARY KEY 이기때문에 id로 구분 -->
 		<id property="memberId" 		  column="MEMBER_ID" /> 
 		<result property="memberPw"		  column="MEMBER_PW"/>
-		<result property="memberPwRe"	  column="MEMBER_PWRE"/>
+		<result property="memberPwRe"	  column="MEMBER_PW_RE"/>
 		<result property="memberName" 	  column="MEMBER_NAME"/>
 		<result property="memberPhone" 	  column="MEMBER_PHONE"/>
 		<result property="memberEmail" 	  column="MEMBER_EMAIL"/>
@@ -23,6 +23,12 @@
 		INSERT INTO MEMBER_TBL VALUES(#{memberId},#{memberPw},#{memberPwRe}
 		,#{memberName},#{memberPhone},#{memberEmail},#{memberAddress},#{memberGender},#{memberBirthday})
 	</insert>
+	
+	<update id="updateMember">
+		UPDATE INTO MEMBER_TBL SET MEMBER_PW = #{memberPw} , MEMBER_PW_RE = #{memberPwRe }
+		, MEMBER_PHONE = #{memberPhone }, MEMBER_EMAIL = #{memberEmail }
+		, MEMBER_ADDRESS = #{memberAddress } WHERE MEMBER_ID = #{memberId}
+	</update>
 	
 	<select id="selectLongin" resultMap="memberResultMap">
 		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId } AND MEMBER_PW = #{memberPw }
@@ -37,10 +43,15 @@
 	</select>
 	
 	<select id="selectPwOneByPhone" resultMap="memberResultMap">
-		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_PHONE = #{memberPhone }
+		SELECT MEMB
+		ER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_PHONE = #{memberPhone }
 	</select>
 	
-		<select id="selectPwOneByEmail" resultMap="memberResultMap">
+	<select id="selectPwOneByEmail" resultMap="memberResultMap">
 		SELECT MEMBER_PW FROM MEMBER_TBL WHERE MEMBER_NAME = #{memberName } AND MEMBER_Email = #{memberEmail }
+	</select>
+	
+	<select id="selectOneById" resultMap="memberResultMap">
+		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId }
 	</select>
 </mapper>

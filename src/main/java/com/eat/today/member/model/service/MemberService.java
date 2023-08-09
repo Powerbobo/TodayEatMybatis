@@ -27,6 +27,20 @@ public class MemberService {
 		session.close();
 		return result;
 	}
+	// 마이페이지 정보수정
+	public int updateMember(Member member) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = mDao.updateMember(session, member);
+		if(result > 0) {
+			// 성공시 커밋
+			session.commit();
+		} else {
+			// 실패시 롤백
+			session.rollback();
+		}
+		session.close();
+		return result;
+	}
 	// 로그인
 	public Member selectLongin(Member member) {
 		SqlSession session = SqlSessionTemplate.getSqlSession();
@@ -58,6 +72,14 @@ public class MemberService {
 		Member mOne = mDao.selectPwOneByEmail(session, member);
 		return mOne;
 	}
+	// 마이페이지 조회
+	public Member selectOneById(String memberId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		Member member = mDao.selectOneById(session, memberId);
+		return member;
+	}
+
+
 	
 	
 	

@@ -35,5 +35,15 @@ public class MemberDAO {
 		Member mOne = session.selectOne("MemberMapper.selectPwOneByEmail", member);
 		return mOne;
 	}
+	// 마이페이지 정보수정
+	public int updateMember(SqlSession session, Member member) {
+		int result = session.update("MemberMapper.updateMember", member);
+		return result;
+	}
+	// 마이페이지 조회
+	public Member selectOneById(SqlSession session, String memberId) {
+		Member member = session.selectOne("MemberMapper.selectOneById", memberId);
+		return member;
+	}
 
 }
