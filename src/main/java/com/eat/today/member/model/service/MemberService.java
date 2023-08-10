@@ -78,6 +78,12 @@ public class MemberService {
 		Member member = mDao.selectOneById(session, memberId);
 		return member;
 	}
+	// 탈퇴하기
+	public int deleteMember(String memberId) {
+		SqlSession session = SqlSessionTemplate.getSqlSession();
+		int result = mDao.deleteMember(session, memberId);
+		return result;
+	}
 
 
 	

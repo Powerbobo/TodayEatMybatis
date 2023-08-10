@@ -36,7 +36,14 @@
 				</li>
 				<!-- 마이페이지 -->
 				<li>
-					<a class="manu" href="/member/myPage.do?memberId=${member.memberId }">마이페이지</a>
+					<c:if test="${userId eq null }">
+					
+<!-- 						*** "로그인 후 이용해주세요."alert 창 띄우기 *** -->
+
+					</c:if>
+					<c:if test="${userId ne null }">
+						<a class="manu" href="/member/myPage.do?memberId=${userId }">마이페이지</a>
+					</c:if>
 				</li>
 			</ul>
 		</nav>
@@ -49,9 +56,9 @@
 			</c:if>
 		<c:if test="${ userId ne null }">
 <!-- 			<small>{sessionScope.userName }님 환영합니다!</small> -->
-			<a href="/member/myPage.do?memberId=${member.memberId }">마이페이지</a>
+			<a href="/member/myPage.do?memberId=${userId}">마이페이지</a>
 			<pre id="Space"> | </pre>
-			<a href="/member/logout.do?memberId=${member.memberId }">로그아웃</a>
+			<a href="/member/logout.do?memberId=${userId }">로그아웃</a>
 		</c:if>
 		</div>
 	</div>

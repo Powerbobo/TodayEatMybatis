@@ -38,12 +38,14 @@ public class MypageController extends HttpServlet {
 		if(member != null) {	
 			// 멤버가 있으면~
 			request.setAttribute("member", member);
-			request.getRequestDispatcher("/WEB-INF/views/member/myPage.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/member/myPage.jsp")
+			.forward(request, response);
 		} else {	
 			// 멤버가 없으면~
-			request.setAttribute("msg", "회원정보가 조회 실패!");
+			request.setAttribute("msg", "회원정보 조회 실패!");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
+			.forward(request, response);
 		}
 	}
 

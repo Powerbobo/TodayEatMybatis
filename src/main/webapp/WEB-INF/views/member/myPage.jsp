@@ -20,11 +20,11 @@
 						</li>
 						<li>
 							<label for="memberPw">비밀번호</label>
-							<input type="password" id="memberPw" name="memberPw" value="${member.memberId}" readonly>
+							<input type="password" id="memberPw" name="memberPw" value="${member.memberId}" >
 						</li>
 						<li>
 							<label for="memberPw">비밀번호 확인</label>
-							<input type="password" id="memberPwRe" name="memberPwRe" value="${member.memberId}" readonly>
+							<input type="password" id="memberPwRe" name="memberPwRe" value="${member.memberId}" >
 						</li>
 						<li>
 							<label for="memberName">이름</label>

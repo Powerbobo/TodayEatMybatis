@@ -61,8 +61,8 @@ public class UpdateController extends HttpServlet {
 		if(result > 0) {
 			// 성공 -> 수정된 페이지 다시 띄우기
 			request.setAttribute("msg", "정보 수정 성공!");
-			request.getRequestDispatcher("/WEB-INF/views/common/serviceS"
-					+ "..uccess.jsp")
+			request.setAttribute("url", "/member/myPage.do?memberId="+member.getMemberId());
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
 			.forward(request, response);
 		} else {
 			// 실패 -> alert 창에 실패메세지 띄우고, 다시 페이지로 돌아가기

@@ -45,5 +45,9 @@ public class MemberDAO {
 		Member member = session.selectOne("MemberMapper.selectOneById", memberId);
 		return member;
 	}
+	public int deleteMember(SqlSession session, String memberId) {
+		int result = session.delete("MemberMapper.deleteMember", memberId);
+		return result;
+	}
 
 }
